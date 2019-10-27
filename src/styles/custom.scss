@@ -1,0 +1,42 @@
+// Prefix
+$css-prefix             : ov-;
+$css-prefix-iconfont    : ov-icon;
+
+// Color
+$primary-color          : #2d8cf0;
+$info-color             : #2db7f5;
+$success-color          : #19be6b;
+$processing-color       : $primary-color;
+$warning-color          : #ff9900;
+$error-color            : #ed4014;
+$normal-color           : #e6ebf1;
+$link-color             : #2D8cF0;
+$link-hover-color       : tint($link-color, 20%);
+$link-active-color      : shade($link-color, 5%);
+$selected-color         : fade($primary-color, 90%);
+$tooltip-color          : #fff;
+$subsidiary-color       : #808695;
+$rate-star-color        : #f5a623;
+$white: #fff;
+$black: #000;
+
+// Base
+$body-background        : #fff;
+$component-background   : #fff;
+$font-family            : "Helvetica Neue",Helvetica,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","微软雅黑",Arial,sans-serif;
+$code-family            : Consolas,Menlo,Courier,monospace;
+$title-color            : #17233d;
+$text-color             : #515a6e;
+$text-color-secondary: fade($black, 45%);
+
+// Border color
+$border-color-base      : #dcdee2;  // outside
+
+// Background color
+$background-color-base        : #f7f7f7;  // base
+
+// Animation
+$animation-time         : .3s;
+$animation-time-quick   : .15s;
+$transition-time        : .2s;
+$ease-in-out            : ease-in-out;

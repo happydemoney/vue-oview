@@ -1,16 +1,21 @@
 import './styles/index.scss' // 样式文件
 import Icon from './components/icon'
 import Card from './components/card'
+import Collapse from './components/collapse'
 
 const components = {
     Icon,
-    Card
+    Card,
+    Collapse,
+    Panel: Collapse.Panel
 }
 
 const oview = {
     ...components,
     oCard: Card,
-    oIcon: Icon
+    oIcon: Icon,
+    oCollapse: Collapse,
+    oPanel: Collapse.Panel
 }
 
 const install = function(Vue) {
