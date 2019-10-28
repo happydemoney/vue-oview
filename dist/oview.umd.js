@@ -2700,12 +2700,12 @@ var card_component = normalizeComponent(
 // CONCATENATED MODULE: ./src/components/card/index.js
 
 /* harmony default export */ var components_card = (card);
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"5d6b9a8e-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/collapse/collapse.vue?vue&type=template&id=679bc12e&
-var collapsevue_type_template_id_679bc12e_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{class:_vm.classes},[_vm._t("default")],2)}
-var collapsevue_type_template_id_679bc12e_staticRenderFns = []
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"5d6b9a8e-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/collapse/collapse.vue?vue&type=template&id=29099420&
+var collapsevue_type_template_id_29099420_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{class:_vm.classes},[_vm._t("default")],2)}
+var collapsevue_type_template_id_29099420_staticRenderFns = []
 
 
-// CONCATENATED MODULE: ./src/components/collapse/collapse.vue?vue&type=template&id=679bc12e&
+// CONCATENATED MODULE: ./src/components/collapse/collapse.vue?vue&type=template&id=29099420&
 
 // EXTERNAL MODULE: ./node_modules/core-js/modules/es6.regexp.to-string.js
 var es6_regexp_to_string = __webpack_require__("6b54");
@@ -2735,6 +2735,10 @@ var collapsevue_type_script_lang_js_prefixCls = 'ov-collapse';
       type: [Array, String]
     },
     simple: {
+      type: Boolean,
+      default: false
+    },
+    drag: {
       type: Boolean,
       default: false
     }
@@ -2834,8 +2838,8 @@ var collapsevue_type_script_lang_js_prefixCls = 'ov-collapse';
 
 var collapse_component = normalizeComponent(
   collapse_collapsevue_type_script_lang_js_,
-  collapsevue_type_template_id_679bc12e_render,
-  collapsevue_type_template_id_679bc12e_staticRenderFns,
+  collapsevue_type_template_id_29099420_render,
+  collapsevue_type_template_id_29099420_staticRenderFns,
   false,
   null,
   null,

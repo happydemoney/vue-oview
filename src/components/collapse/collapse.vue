@@ -18,6 +18,10 @@
             simple: {
                 type: Boolean,
                 default: false
+            },
+            drag: {
+                type: Boolean,
+                default: false
             }
         },
         data () {
