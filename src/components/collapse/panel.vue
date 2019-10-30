@@ -1,6 +1,11 @@
 <template>
     <div :class="itemClasses">
-        <div :class="headerClasses" @click="toggle">
+        <div :class="headerClasses"
+            @click="toggle"
+            :draggable="draggable"
+            @dragstart="handleDragstart($event, index)"
+            @dragover.prevent
+            @drop="handleDrop($event, index)">
             <Icon type="arrow" v-if="!hideArrow"></Icon>
             <slot></slot>
         </div>
@@ -59,6 +64,15 @@
                     name: this.name || this.index,
                     isActive: this.isActive
                 });
+            },
+            handleDragstart (event, index) {
+              // 将被拖拽元素的index存入dataTransfer
+              event.dataTransfer.setData('dragIndex', index)
+            },
+            handleDrop (event, index) {
+              // 被拖拽的元素index - dragIndex
+              const dragIndex = event.dataTransfer.getData('dragIndex')
+              this.$parent.handleDrop(dragIndex, index)
             }
         },
         mounted () {

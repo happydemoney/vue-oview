@@ -19,7 +19,7 @@
                 type: Boolean,
                 default: false
             },
-            drag: {
+            draggable: {
                 type: Boolean,
                 default: false
             }
@@ -50,6 +50,7 @@
                         const name = child.name || index.toString();
                         child.isActive = activeKey.indexOf(name) > -1;
                         child.index = index;
+                        child.draggable = this.draggable // 是否启用拖拽
                     });
                 });
             },
@@ -91,6 +92,25 @@
                 this.currentValue = newActiveKey;
                 this.$emit('input', newActiveKey);
                 this.$emit('on-change', newActiveKey);
+            },
+            handleDrop (dragIndex, dropIndex) {
+              // 是否需要数据转换
+              if (dragIndex === dropIndex) {
+                return
+              }
+              // 复制源数据
+              const childrenCopy = this.$children.slice()
+              // 对数据进行交换
+              childrenCopy.splice(dropIndex, 0, ...childrenCopy.splice(dragIndex, 1))
+              this.$children = []
+              this.$children.push(...childrenCopy)
+              this.resetChildIndex()
+              this.$emit('dragComplete', dragIndex, dropIndex)
+            },
+            resetChildIndex () {
+              this.$children.forEach((child, index) => {
+                child.index = index
+              })
             }
         },
         watch: {
