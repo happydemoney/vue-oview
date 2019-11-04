@@ -3569,12 +3569,12 @@ var card_component = normalizeComponent(
 // CONCATENATED MODULE: ./src/components/card/index.js
 
 /* harmony default export */ var components_card = (card);
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"5d6b9a8e-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/collapse/collapse.vue?vue&type=template&id=09b7abdc&
-var collapsevue_type_template_id_09b7abdc_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{class:_vm.classes},[_vm._t("default")],2)}
-var collapsevue_type_template_id_09b7abdc_staticRenderFns = []
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"5d6b9a8e-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/collapse/collapse.vue?vue&type=template&id=61f9dff4&
+var collapsevue_type_template_id_61f9dff4_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"wrapper"},[(_vm.mounted)?_c('transition-group',{class:_vm.classes,attrs:{"tag":"div"}},[_vm._t("default")],2):_vm._e()],1)}
+var collapsevue_type_template_id_61f9dff4_staticRenderFns = []
 
 
-// CONCATENATED MODULE: ./src/components/collapse/collapse.vue?vue&type=template&id=09b7abdc&
+// CONCATENATED MODULE: ./src/components/collapse/collapse.vue?vue&type=template&id=61f9dff4&
 
 // EXTERNAL MODULE: ./node_modules/@babel/runtime-corejs2/core-js/array/is-array.js
 var is_array = __webpack_require__("a745");
@@ -3633,6 +3633,11 @@ var es6_function_name = __webpack_require__("7f7f");
 //
 //
 //
+//
+//
+//
+//
+//
 var collapsevue_type_script_lang_js_prefixCls = 'ov-collapse';
 /* harmony default export */ var collapsevue_type_script_lang_js_ = ({
   name: 'Collapse',
@@ -3655,7 +3660,8 @@ var collapsevue_type_script_lang_js_prefixCls = 'ov-collapse';
   },
   data: function data() {
     return {
-      currentValue: this.value
+      currentValue: this.value,
+      mounted: false
     };
   },
   computed: {
@@ -3664,6 +3670,7 @@ var collapsevue_type_script_lang_js_prefixCls = 'ov-collapse';
     }
   },
   mounted: function mounted() {
+    this.mounted = true;
     this.setActive();
   },
   methods: {
@@ -3672,7 +3679,7 @@ var collapsevue_type_script_lang_js_prefixCls = 'ov-collapse';
 
       var activeKey = this.getActiveKey();
       this.$nextTick(function () {
-        _this.$children.forEach(function (child, index) {
+        _this.$children[0].$children.forEach(function (child, index) {
           var name = child.name || index.toString();
           child.isActive = activeKey.indexOf(name) > -1;
           child.index = index;
@@ -3728,7 +3735,7 @@ var collapsevue_type_script_lang_js_prefixCls = 'ov-collapse';
       this.$emit('on-change', newActiveKey);
     },
     handleDrop: function handleDrop(dragIndex, dropIndex) {
-      var _this$$children;
+      var _this$$children$0$$ch;
 
       // 是否需要数据转换
       if (dragIndex === dropIndex) {
@@ -3736,18 +3743,18 @@ var collapsevue_type_script_lang_js_prefixCls = 'ov-collapse';
       } // 复制源数据
 
 
-      var childrenCopy = this.$children.slice(); // 对数据进行交换
+      var childrenCopy = this.$children[0].$children.slice(); // 对数据进行交换
 
       childrenCopy.splice.apply(childrenCopy, [dropIndex, 0].concat(_toConsumableArray(childrenCopy.splice(dragIndex, 1))));
-      this.$children = [];
+      this.$children[0].$children = [];
 
-      (_this$$children = this.$children).push.apply(_this$$children, _toConsumableArray(childrenCopy));
+      (_this$$children$0$$ch = this.$children[0].$children).push.apply(_this$$children$0$$ch, _toConsumableArray(childrenCopy));
 
       this.resetChildIndex();
       this.$emit('dragComplete', dragIndex, dropIndex);
     },
     resetChildIndex: function resetChildIndex() {
-      this.$children.forEach(function (child, index) {
+      this.$children[0].$children.forEach(function (child, index) {
         child.index = index;
       });
     }
@@ -3773,8 +3780,8 @@ var collapsevue_type_script_lang_js_prefixCls = 'ov-collapse';
 
 var collapse_component = normalizeComponent(
   collapse_collapsevue_type_script_lang_js_,
-  collapsevue_type_template_id_09b7abdc_render,
-  collapsevue_type_template_id_09b7abdc_staticRenderFns,
+  collapsevue_type_template_id_61f9dff4_render,
+  collapsevue_type_template_id_61f9dff4_staticRenderFns,
   false,
   null,
   null,
@@ -3783,12 +3790,12 @@ var collapse_component = normalizeComponent(
 )
 
 /* harmony default export */ var collapse = (collapse_component.exports);
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"5d6b9a8e-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/collapse/panel.vue?vue&type=template&id=79241410&
-var panelvue_type_template_id_79241410_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{class:_vm.itemClasses},[_c('div',{class:_vm.headerClasses,attrs:{"draggable":_vm.draggable},on:{"click":_vm.toggle,"dragstart":function($event){return _vm.handleDragstart($event, _vm.index)},"dragover":function($event){$event.preventDefault();},"drop":function($event){return _vm.handleDrop($event, _vm.index)}}},[(!_vm.hideArrow)?_c('Icon',{attrs:{"type":"arrow"}}):_vm._e(),_vm._t("default")],2),(_vm.mounted)?_c('collapse-transition',[_c('div',{directives:[{name:"show",rawName:"v-show",value:(_vm.isActive),expression:"isActive"}],class:_vm.contentClasses},[_c('div',{class:_vm.boxClasses},[_vm._t("content")],2)])]):_vm._e()],1)}
-var panelvue_type_template_id_79241410_staticRenderFns = []
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"5d6b9a8e-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/collapse/panel.vue?vue&type=template&id=2a919bd0&
+var panelvue_type_template_id_2a919bd0_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{class:_vm.itemClasses},[_c('div',{class:_vm.headerClasses,attrs:{"draggable":_vm.draggable},on:{"click":_vm.toggle,"dragstart":function($event){return _vm.handleDragstart($event, _vm.index)},"dragover":function($event){$event.preventDefault();},"drop":function($event){return _vm.handleDrop($event, _vm.index)}}},[(!_vm.hideArrow)?_c('Icon',{attrs:{"type":"arrow"}}):_vm._e(),_vm._t("default")],2),(_vm.mounted)?_c('collapse-transition',[_c('div',{directives:[{name:"show",rawName:"v-show",value:(_vm.isActive),expression:"isActive"}],class:_vm.contentClasses},[_c('div',{class:_vm.boxClasses},[_vm._t("content")],2)])]):_vm._e()],1)}
+var panelvue_type_template_id_2a919bd0_staticRenderFns = []
 
 
-// CONCATENATED MODULE: ./src/components/collapse/panel.vue?vue&type=template&id=79241410&
+// CONCATENATED MODULE: ./src/components/collapse/panel.vue?vue&type=template&id=2a919bd0&
 
 // EXTERNAL MODULE: ./node_modules/core-js/modules/es6.regexp.split.js
 var es6_regexp_split = __webpack_require__("28a5");
@@ -3997,7 +4004,7 @@ var panelvue_type_script_lang_js_prefixCls = 'ov-collapse';
   },
   methods: {
     toggle: function toggle() {
-      this.$parent.toggle({
+      this.$parent.$parent.toggle({
         name: this.name || this.index,
         isActive: this.isActive
       });
@@ -4009,7 +4016,7 @@ var panelvue_type_script_lang_js_prefixCls = 'ov-collapse';
     handleDrop: function handleDrop(event, index) {
       // 被拖拽的元素index - dragIndex
       var dragIndex = event.dataTransfer.getData('dragIndex');
-      this.$parent.handleDrop(dragIndex, index);
+      this.$parent.$parent.handleDrop(dragIndex, index);
     }
   },
   mounted: function mounted() {
@@ -4028,8 +4035,8 @@ var panelvue_type_script_lang_js_prefixCls = 'ov-collapse';
 
 var panel_component = normalizeComponent(
   collapse_panelvue_type_script_lang_js_,
-  panelvue_type_template_id_79241410_render,
-  panelvue_type_template_id_79241410_staticRenderFns,
+  panelvue_type_template_id_2a919bd0_render,
+  panelvue_type_template_id_2a919bd0_staticRenderFns,
   false,
   null,
   null,

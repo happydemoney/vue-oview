@@ -60,7 +60,7 @@
         },
         methods: {
             toggle () {
-                this.$parent.toggle({
+                this.$parent.$parent.toggle({
                     name: this.name || this.index,
                     isActive: this.isActive
                 });
@@ -72,7 +72,7 @@
             handleDrop (event, index) {
               // 被拖拽的元素index - dragIndex
               const dragIndex = event.dataTransfer.getData('dragIndex')
-              this.$parent.handleDrop(dragIndex, index)
+              this.$parent.$parent.handleDrop(dragIndex, index)
             }
         },
         mounted () {

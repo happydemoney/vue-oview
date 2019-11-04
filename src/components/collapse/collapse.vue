@@ -1,6 +1,11 @@
 <template>
-    <div :class="classes">
+    <!-- <div :class="classes">
         <slot></slot>
+    </div> -->
+    <div class="wrapper">
+        <transition-group :class="classes" tag="div" v-if="mounted">
+            <slot></slot>
+        </transition-group>
     </div>
 </template>
 <script>
@@ -26,7 +31,8 @@
         },
         data () {
             return {
-                currentValue: this.value
+                currentValue: this.value,
+                mounted: false
             };
         },
         computed: {
@@ -40,13 +46,14 @@
             }
         },
         mounted () {
+            this.mounted = true
             this.setActive();
         },
         methods: {
             setActive () {
                 const activeKey = this.getActiveKey();
                 this.$nextTick(() => {
-                    this.$children.forEach((child, index) => {
+                    this.$children[0].$children.forEach((child, index) => {
                         const name = child.name || index.toString();
                         child.isActive = activeKey.indexOf(name) > -1;
                         child.index = index;
@@ -99,16 +106,16 @@
                 return
               }
               // 复制源数据
-              const childrenCopy = this.$children.slice()
+              const childrenCopy = this.$children[0].$children.slice()
               // 对数据进行交换
               childrenCopy.splice(dropIndex, 0, ...childrenCopy.splice(dragIndex, 1))
-              this.$children = []
-              this.$children.push(...childrenCopy)
+              this.$children[0].$children = []
+              this.$children[0].$children.push(...childrenCopy)
               this.resetChildIndex()
               this.$emit('dragComplete', dragIndex, dropIndex)
             },
             resetChildIndex () {
-              this.$children.forEach((child, index) => {
+              this.$children[0].$children.forEach((child, index) => {
                 child.index = index
               })
             }
