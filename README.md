@@ -1,5 +1,9 @@
 # vue-oview
 
+    An UI components Library with Vue.js
+    
+[ ![PRs Welcome](https://img.shields.io/badge/PRs-Welcome-brightgreen.svg)](https://github.com/happydemoney/vue-oview/pulls)
+[![License MIT](https://img.shields.io/github/license/happydemoney/react-native-rn-toast.svg)](https://github.com/happydemoney/vue-oview/blob/master/LICENSE)
 ##  Docs
 
 ##  Features
